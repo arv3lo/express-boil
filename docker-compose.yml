@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  server:
+    build: .
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/usr/src/app
+    environment:
+      DB_URL: mongodb://db/school
+  # db:
+  #   image: mongo:5
+  #   ports:
+  #     - 27017:27017
+  #   volumes:
+  #     -data:/data/db
+
+volumes:
+  data:
