@@ -8,12 +8,12 @@ services:
       - .:/usr/src/app
     environment:
       DB_URL: mongodb://db/school
-  # db:
-  #   image: mongo:5
-  #   ports:
-  #     - 27017:27017
-  #   volumes:
-  #     -data:/data/db
+  mongo:
+    image: mongo:5-focal
+    ports:
+      - 27017:27017
+    volumes: 
+      - data:/data/db
 
 volumes:
   data:
