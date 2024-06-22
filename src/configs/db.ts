@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const DB_URL = process.env.DATABASE_URL || "";
+const DB_URL = process.env.DATABASE_URL || "mongodb://localhost:27017/boilerplate";
 
 const initDB = (): void => {
   mongoose
@@ -8,7 +8,6 @@ const initDB = (): void => {
     .then(() => console.info(`Successfully connected to ${DB_URL} ...`));
 
   mongoose.connection.on("error", (err) => {
-    console.log("===ERR===", err);
     throw new Error(`Unable to connect to database ${DB_URL} ...`);
   });
 };

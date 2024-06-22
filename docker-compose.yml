@@ -5,9 +5,9 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - .:/usr/src/app
+      - .:/app
     environment:
-      DB_URL: mongodb://db/school
+      DATABASE_URL: mongodb://mongo/boiler
   mongo:
     image: mongo:5-focal
     ports:

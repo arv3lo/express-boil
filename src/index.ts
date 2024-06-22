@@ -6,8 +6,8 @@ import initDB from "./configs/db";
 const app = express();
 const port = 5000;
 
-routes(app);
 initDB();
+routes(app);
 
 app.listen(port, () => {
   console.log(`Listening on port http://localhost:${port}...`);
